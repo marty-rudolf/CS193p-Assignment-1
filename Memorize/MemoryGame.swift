@@ -7,6 +7,7 @@
 //
 //
 import Foundation
+import SwiftUI
 
 struct MemoryGame<CardContent> where CardContent: Equatable {
     var cards: Array<Card>
@@ -52,5 +53,23 @@ struct MemoryGame<CardContent> where CardContent: Equatable {
         var id: Int
     }
     
+    struct Theme: Identifiable {
+        var id: String { name }
+        var name: String
+        var emojiPack: [String]
+        var numCards: Int?
+        var color: Color
+    }
+    
+    var themes: [Theme] = [
+        Theme(name: "Faces", emojiPack: ["👩‍🦳", "👳‍♂️", "👩", "🧕" ,"👩‍🎤", "🧑‍🎤", "🧟‍♂️", "🧑‍🚒"], color: .yellow),
+        Theme(name: "Flags", emojiPack: ["🇦🇸", "🇨🇨", "🏳️", "🇺🇳", "🇨🇳", "🇧🇳"], color: .black),
+        Theme(name: "Food", emojiPack: ["🍏", "🍎", "🍇", "🍋", "🥨"], color: .green),
+        Theme(name: "Halloween", emojiPack: ["👻", "🎃", "🤡", "👽", "💀", "🧟‍♀️", "👩‍🚀", "🧜‍♀️", "🦹‍♂️", "🎩"], color: .orange),
+        Theme(name: "Sports", emojiPack: ["⚽️", "🏀", "🏈", "🪀", "🏓"], color: .blue)
+    ]
+
+
+
     
 }
